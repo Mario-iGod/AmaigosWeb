@@ -1,0 +1,154 @@
+:root {
+    --bg-c: hsl(323 21% 16%);
+    --nn-c: hsl(317 100% 54%);
+}
+
+* {
+    margin: none;
+    padding: none;
+    font-family: sans-serif;
+}
+
+body {
+    background: var(--bg-c);
+    color: var(--nn-c);
+    text-align: center;
+}
+
+espaciador {
+    font-size: 3rem;
+    margin: 3em 3em;
+}
+
+.title {
+    font-size: 3rem;
+
+    margin-left: auto; margin-right: auto;
+
+    margin-top: 1em;
+    color: var(--nn-c);
+    text-shadow: 
+        0 0 0.125em hsl(0 0% 100% / 0.3),
+        0 0 0.45em var(--nn-c);
+    position: relative;
+    background: var(--bg-c);
+    outline: none;
+    border: none;
+
+    width: 10em;
+}
+
+.title::before {
+    pointer-events: none;
+
+    content: "";
+    position: absolute;
+    top: 120%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--nn-c);
+    transform:
+        perspective(3em)
+        rotateX(30deg)
+        scale(1, 0.35);
+    filter: 
+        blur(1em)
+        opacity(0.7)
+}
+
+.neon-btn {
+    font-size: 2.5rem;
+    
+    background: var(--bg-c);
+    color: var(--nn-c);
+    width: 8em;
+    border: var(--nn-c) 0.1em solid;
+    border-radius: 0.25em;
+    cursor: pointer;
+
+    margin-top: 0.5em;
+    margin-left: 0.5em;
+    margin-bottom: 3em;
+    padding: 0.25em 0.5em;
+
+    text-shadow:
+        0 0 0.45em currentColor,
+        0 0 0.125em hsl(0, 0%, 100%, 0.3);
+    box-shadow:
+        0 0 0.5em currentColor,
+        inset 0 0 0.5em currentColor;
+    position: relative;
+}
+.neon-btn:hover,
+.neon-btn:focus {
+    background: var(--nn-c);
+    color: var(--bg-c);
+    text-shadow: none;
+    box-shadow: none;
+}
+
+.neon-btn::before {
+    pointer-events: none;
+
+    content: "";
+    position: absolute;
+    top: 120%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--nn-c);
+    transform:
+        perspective(3em)
+        rotateX(30deg)
+        scale(1, 0.35);
+    filter: 
+        blur(1em);
+    opacity: 0.7;
+}
+.neon-btn:focus::before,
+.neon-btn:hover::before {
+    opacity: 1;
+}
+
+.neon-btn::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    box-shadow: 0 0 2em 0.5em var(--nn-c);
+    opacity: 0;
+    transition: opacity 100ms linear;
+}
+.neon-btn:hover::after,
+.neon-btn:focus::after {
+    opacity: 1;
+}
+
+.text {
+    font-size: 1.5rem;
+    text-shadow:
+        0 0 0.45em var(--nn-c),
+        0 0 0.125em hsl(0, 0%, 100%, 0.3);
+}
+
+.neon-cont {
+    font-size: 1.75rem;
+
+    color: var(--nn-c);
+    border: var(--nn-c) 0.125em solid;
+    border-radius: 0.25em;
+    width: 55%;
+
+    margin-left: auto; margin-right: auto;
+    padding: 1em 0;
+
+    text-shadow:
+        0 0 0.45em var(--nn-c),
+        0 0 0.125em hsl(0 0% 100% / 0.3);
+    box-shadow: 
+        0 0 0.5em var(--nn-c),
+        inset 0 0 0.5em var(--nn-c);
+}
